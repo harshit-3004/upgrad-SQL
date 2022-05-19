@@ -1,0 +1,46 @@
+
+##creating the table transaction##
+
+CREATE TABLE `practice`.`transactions` (
+  `Check_no` VARCHAR(45) NOT NULL,
+  `Company_id` VARCHAR(5) NOT NULL,
+  `Date` DATE NOT NULL,
+  `Amount` INT NOT NULL,
+  PRIMARY KEY (`Check_no`));
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+##inserting the data into the transactions table##
+
+INSERT INTO `practice`.`transactions` (`Check_no`, `Company_id`, `Date`, `Amount`) VALUES ('SBI1234', 'B', '2020-01-18', '19877');
+INSERT INTO `practice`.`transactions` (`Check_no`, `Company_id`, `Date`, `Amount`) VALUES ('AXIS2476', 'D', '2020-05-23', '20876');
+INSERT INTO `practice`.`transactions` (`Check_no`, `Company_id`, `Date`, `Amount`) VALUES ('HDFC7612', 'B', '2020-09-09', '45261');
+INSERT INTO `practice`.`transactions` (`Check_no`, `Company_id`, `Date`, `Amount`) VALUES ('ICICI1010', 'E', '2020-12-12', '10298');
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+##creating the table company##
+
+CREATE TABLE `practice`.`company` (
+  `Company_id` VARCHAR(5) NOT NULL,
+  `Company_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Company_id`));
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+##inserting the data into the company table##
+
+INSERT INTO `practice`.`company` (`Company_id`, `Company_name`) VALUES ('A', 'Hyundai');
+INSERT INTO `practice`.`company` (`Company_id`, `Company_name`) VALUES ('B', 'Toyota');
+INSERT INTO `practice`.`company` (`Company_id`, `Company_name`) VALUES ('C', 'Tata');
+INSERT INTO `practice`.`company` (`Company_id`, `Company_name`) VALUES ('E', 'Ford');
+INSERT INTO `practice`.`company` (`Company_id`, `Company_name`) VALUES ('F', 'Maruti');
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+##Applying the inner join command on both the tables##
+SELECT * FROM `practice`.`transactions` INNER JOIN `practice`.`company` ON `practice`.`transactions`.`Company_id` = `practice`.`company`.`Company_id`;
